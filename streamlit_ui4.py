@@ -8,7 +8,9 @@ from google.genai.errors import ClientError
 MODEL = "gemini-3-flash-preview"
 
 # Use environment variable
-API_KEY = os.getenv("GEMINI_API_KEY")
+#API_KEY = os.getenv("GEMINI_API_KEY")
+# Fetch API key from Streamlit secrets
+API_KEY = st.secrets["GEMINI_API_KEY"]
 
 client = genai.Client(api_key=API_KEY)
 
